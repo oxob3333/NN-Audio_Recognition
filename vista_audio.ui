@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>547</width>
-    <height>224</height>
+    <width>630</width>
+    <height>414</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <widget class="QPushButton" name="pushButton_Adelante">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>20</x>
       <y>70</y>
       <width>131</width>
       <height>51</height>
@@ -33,7 +33,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>50</x>
       <y>10</y>
       <width>531</width>
       <height>31</height>
@@ -49,8 +49,8 @@
    <widget class="QPushButton" name="pushButton_Atras">
     <property name="geometry">
      <rect>
-      <x>120</x>
-      <y>130</y>
+      <x>170</x>
+      <y>70</y>
       <width>131</width>
       <height>51</height>
      </rect>
@@ -65,7 +65,7 @@
    <widget class="QPushButton" name="pushButton_Izquierda">
     <property name="geometry">
      <rect>
-      <x>210</x>
+      <x>320</x>
       <y>70</y>
       <width>131</width>
       <height>51</height>
@@ -81,8 +81,8 @@
    <widget class="QPushButton" name="pushButton_Alto">
     <property name="geometry">
      <rect>
-      <x>280</x>
-      <y>130</y>
+      <x>420</x>
+      <y>150</y>
       <width>131</width>
       <height>51</height>
      </rect>
@@ -97,7 +97,7 @@
    <widget class="QPushButton" name="pushButton_Derecha">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>470</x>
       <y>70</y>
       <width>131</width>
       <height>51</height>
@@ -110,13 +110,144 @@
      <string>Derecha</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_Acelera">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Acelera</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Disminuye">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>150</y>
+      <width>151</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Disminuye</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Intermitentes">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>230</y>
+      <width>171</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Intermitentes</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Luz_Alta">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>230</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Luz Alta</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Luz_Baja">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>230</y>
+      <width>191</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Luz Baja</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>320</y>
+      <width>311</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>No. de Iteraciones de NN:</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_Iniciar">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>320</y>
+      <width>161</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Iniciar NN</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="lineEdit">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>320</y>
+      <width>81</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>20</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>547</width>
+     <width>630</width>
      <height>21</height>
     </rect>
    </property>

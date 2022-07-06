@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 import tensorflow as tf
-from main import preprocess_dataset
+from NN_Clase import preprocess_dataset
 
 from tensorflow.keras import layers
 from tensorflow.keras import models

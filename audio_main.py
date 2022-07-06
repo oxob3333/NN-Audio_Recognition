@@ -8,6 +8,7 @@ from vista_audio import Ui_MainWindow
 
 from record_audio import Audio_Creation
 
+from NN_Clase import NN_audio
 
 class mywindow(QtWidgets.QMainWindow):
 
@@ -22,7 +23,14 @@ class mywindow(QtWidgets.QMainWindow):
         self.ui.pushButton_Izquierda.clicked.connect(self.boton_Izquierda)
         self.ui.pushButton_Derecha.clicked.connect(self.boton_Derecha)
         self.ui.pushButton_Alto.clicked.connect(self.boton_Alto)
-
+        self.ui.pushButton_Acelera.clicked.connect(self.boton_Acelera)
+        self.ui.pushButton_Disminuye.clicked.connect(self.boton_Disminuye)
+        self.ui.pushButton_Luz_Alta.clicked.connect(self.boton_Luz_Alta)
+        self.ui.pushButton_Luz_Baja.clicked.connect(self.boton_Luz_Baja)
+        self.ui.pushButton_Intermitentes.clicked.connect(self.boton_Intermitentes)
+        self.ui.pushButton_Iniciar.clicked.connect(self.boton_Iniciar)
+        
+        self.ui.lineEdit.setValidator(QtGui.QIntValidator())
 
     def boton_Adelante(self):
         a = Audio_Creation("Adelante")
@@ -43,6 +51,34 @@ class mywindow(QtWidgets.QMainWindow):
     def boton_Alto(self):
         a = Audio_Creation("Alto")
         a.iniciar_programa()
+    
+    def boton_Acelera(self):
+        a = Audio_Creation("Acelera")
+        a.iniciar_programa()
+    
+    def boton_Disminuye(self):
+        a = Audio_Creation("Disminuye")
+        a.iniciar_programa()
+    
+    def boton_Luz_Alta(self):
+        a = Audio_Creation("Luz alta")
+        a.iniciar_programa()
+    
+    def boton_Luz_Baja(self):
+        a = Audio_Creation("Luz baja")
+        a.iniciar_programa()
+    
+    def boton_Intermitentes(self):
+        a = Audio_Creation("Intermitentes")
+        a.iniciar_programa()
+
+    def boton_Iniciar(self):
+        iteraciones = int(self.ui.lineEdit.text())
+        print(iteraciones)
+
+        clase = NN_audio(iteraciones)
+
+        clase.iniciar()
 
         
 
