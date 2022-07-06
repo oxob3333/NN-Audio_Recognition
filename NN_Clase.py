@@ -100,7 +100,7 @@ class NN_audio:
 
   def iniciar(self):
 # Set the seed value for experiment reproducibility.
-    seed = 42
+    seed = 5
     tf.random.set_seed(seed)
     np.random.seed(seed)
 
@@ -173,7 +173,6 @@ class NN_audio:
         layers.Dropout(0.25),
         layers.Flatten(),
         layers.Dense(50, activation='relu'),
-        layers.Dropout(0.5),
         layers.Dense(num_labels),
     ])
 
