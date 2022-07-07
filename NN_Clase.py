@@ -100,27 +100,25 @@ class NN_audio:
 
   def iniciar(self):
 # Set the seed value for experiment reproducibility.
-    seed = 5
+    seed = 6
     tf.random.set_seed(seed)
     np.random.seed(seed)
 
 
     print('\nComandos: ', self.commands)
 
-    time.sleep(1)
-
     filenames = tf.io.gfile.glob(str(self.data_dir) + '/*/*.wav')
     filenames = tf.random.shuffle(filenames)
     num_samples = len(filenames)
     print('\nNumber of total examples:', num_samples)
 
-    valores_de_entrada = int(float(num_samples)*0.8)
+    valores_de_entrada = int(float(num_samples))
 
-    valid_train = int(float(num_samples)*0.2)
+    valid_train = int(float(num_samples))
 
     train_files = filenames[:valores_de_entrada]
-    val_files = filenames[valores_de_entrada:valores_de_entrada + valid_train]
-    test_files = filenames
+    val_files = filenames[:valores_de_entrada]
+    test_files = filenames[:valores_de_entrada]
 
     print('Training set size: ', len(train_files))
     print('Validation set size: ', len(val_files))
@@ -152,7 +150,6 @@ class NN_audio:
 
     for spectrogram, _ in spectrogram_ds.take(1):
       input_shape = spectrogram.shape
-    print('Input shape:', input_shape)
     num_labels = len(self.commands)
 
     # Instantiate the `tf.keras.layers.Normalization` layer.
@@ -202,8 +199,9 @@ class NN_audio:
 
 
     metrics = history.history
-    plt.plot(history.epoch, metrics['loss'], metrics['val_loss'])
-    plt.legend(['loss', 'val_loss'])
+    plt.plot(history.epoch, metrics['loss'],metrics['val_loss'])
+    plt.legend(['Entrenamiento','Validacion'])
+    plt.autoscale()
     plt.savefig("error")
 
     test_audio = np.array(test_audio)
@@ -240,6 +238,7 @@ class NN_audio:
       prediction = model(spectrogram)
       score = tf.nn.softmax(prediction[0])
       print("\nLa palabra probablemente sea: ",self.commands[np.argmax(score)])
+      plt.figure(figsize=(12.80, 7.20))
       plt.bar(self.commands, score)
       plt.title(f'Predicciones para "{self.commands[label[0]]}"')
       plt.savefig("predict")
