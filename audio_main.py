@@ -10,6 +10,10 @@ from record_audio import Audio_Creation
 
 from NN_Clase import NN_audio
 
+from cargar_modelo import Nueva_prediccion
+
+import os
+
 class mywindow(QtWidgets.QMainWindow):
 
     def __init__(self):
@@ -29,6 +33,9 @@ class mywindow(QtWidgets.QMainWindow):
         self.ui.pushButton_Luz_Baja.clicked.connect(self.boton_Luz_Baja)
         self.ui.pushButton_Intermitentes.clicked.connect(self.boton_Intermitentes)
         self.ui.pushButton_Iniciar.clicked.connect(self.boton_Iniciar)
+
+        self.ui.pushButton_prueba.clicked.connect(self.boton_prueba)
+        self.ui.pushButton_evaluar.clicked.connect(self.boton_evaluar)
         
         self.ui.lineEdit.setValidator(QtGui.QIntValidator())
 
@@ -71,6 +78,15 @@ class mywindow(QtWidgets.QMainWindow):
     def boton_Intermitentes(self):
         a = Audio_Creation("Intermitentes")
         a.iniciar_programa()
+
+    def boton_prueba(self):
+        a = Audio_Creation("prueba")
+        a.iniciar_programa()
+
+    def boton_evaluar(self):
+        a = Nueva_prediccion()
+        a.iniciar()
+        self.ui.label_5.setText(a.resultado)
 
     def boton_Iniciar(self):
         iteraciones = int(self.ui.lineEdit.text())

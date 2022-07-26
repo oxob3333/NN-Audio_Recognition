@@ -8,7 +8,10 @@ import threading
 class Audio_Creation:
     def __init__(self,tipo):
         self.ventana = Tk()
-        self.ventana.title('Grabadora de Audio mp3 sobre la palabra "{}"'.format(tipo))
+        if tipo =="prueba":
+            self.ventana.title('Grabadora de Audio wav para muestra simple')
+        else:
+            self.ventana.title('Grabadora de Audio wav sobre la palabra "{}"'.format(tipo))
         self.tipo = tipo
         #VARIABLES INICIALES
         self.directorio_actual=StringVar()
@@ -59,7 +62,10 @@ class Audio_Creation:
         CHANNELS=1
         RATE=44100
         act_proceso=True
-        archivo="dataset/{}/grabacion.wav".format(self.tipo)
+        if self.tipo=="prueba":
+             archivo="prueba/grabacion.wav"
+        else:
+            archivo="dataset/{}/grabacion.wav".format(self.tipo)
         t1=threading.Thread(target=self.grabacion, args=(FORMAT,CHANNELS,RATE,self.CHUNK,audio,archivo))
         t=threading.Thread(target=self.cuenta)
         t1.start()
@@ -90,9 +96,14 @@ class Audio_Creation:
         global reproduciendo
         self.clear_contador()
         audio=pyaudio.PyAudio()
-        open_archive=filedialog.askopenfilename(initialdir = "dataset/{}/".format(self.tipo),
+        if self.tipo=="prueba":
+            open_archive=filedialog.askopenfilename(initialdir = "{}/".format(self.tipo),
                     title = "Seleccione archivo",filetypes = (("wav files","*.wav"),
                     ("all files","*.*")))
+        else:
+            open_archive=filedialog.askopenfilename(initialdir = "dataset/{}/".format(self.tipo),
+                    title = "Seleccione archivo",filetypes = (("wav files","*.wav"),
+                    ("all files","*.*")))    
         if open_archive!="":
             try:
                 reproduciendo=True
