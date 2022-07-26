@@ -119,7 +119,7 @@ class Ui_MainWindow(object):
         self.pushButton_Luz_Baja.setText(_translate("MainWindow", "Luz Baja"))
         self.label_2.setText(_translate("MainWindow", "No. de Iteraciones de NN:"))
         self.pushButton_Iniciar.setText(_translate("MainWindow", "Iniciar NN"))
-        self.lineEdit.setText(_translate("MainWindow", "20"))
+        self.lineEdit.setText(_translate("MainWindow", "50"))
         self.pushButton_prueba.setText(_translate("MainWindow", "Generar audio de Prueba"))
         self.pushButton_evaluar.setText(_translate("MainWindow", "Evaluar audio de Prueba"))
         self.label_4.setText(_translate("MainWindow", "El resultado de la evaluación fue:"))
