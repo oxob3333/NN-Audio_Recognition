@@ -112,7 +112,7 @@ class NN_audio:
     test_ds = self.preprocess_dataset(test_files)
 
 
-    batch_size = int(len(filenames)*0.3)
+    batch_size = int(len(filenames)*0.1)
     train_ds = train_ds.batch(batch_size)
     val_ds = val_ds.batch(batch_size)
 

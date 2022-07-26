@@ -235,7 +235,7 @@
      <string notr="true">font: 75 20pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>20</string>
+     <string>50</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
