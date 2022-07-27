@@ -12,8 +12,6 @@ from NN_Clase import NN_audio
 
 from cargar_modelo import Nueva_prediccion
 
-import os
-
 class mywindow(QtWidgets.QMainWindow):
 
     def __init__(self):
