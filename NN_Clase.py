@@ -176,7 +176,7 @@ class NN_audio:
     y_pred = np.argmax(model.predict(test_audio), axis=1)
     y_true = test_labels
 
-    model.save('modelo/modelo_audio.h5')
+    model.save('modelo/modelo_audio.keras')
 
     test_acc = sum(y_pred == y_true) / len(y_true)
     print(f'\nPrecisión de la prueba: {test_acc:.0%}')

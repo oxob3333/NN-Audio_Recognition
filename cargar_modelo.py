@@ -66,11 +66,12 @@ class Nueva_prediccion:
 
     
 
-    new_model = tf.keras.models.load_model('modelo/modelo_audio.h5')
+    new_model = tf.keras.models.load_model('modelo/modelo_audio.keras')
 
     sample_file = sample/'grabacion.wav'
 
     try:
+      # Preprocesar el archivo de audio de muestra para identificar la palabra
       sample_ds =  self.preprocess_dataset([str(sample_file)])
     except:
       print("ERROR - archivo de audio no existe.")

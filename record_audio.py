@@ -24,17 +24,17 @@ class Audio_Creation:
         self.f=""
 
         #CONTADOR DE TIEMPO
-        self.time = Label(self.ventana, fg='green', width=20, text="0:00:00", bg="black", font=("","30"))
+        self.time = Label(self.ventana, fg='green', width=18, text="0:00:00", bg="black", font=("","30"))
         self.time.place(x=10,y=20)
-        self.ventana.geometry("488x97")
+        self.ventana.geometry("550x140")
 
         #BOTONES 
         self.btnIniciar=Button(self.ventana, fg='blue',width=16, text='Grabar', command=self.iniciar)
-        self.btnIniciar.place(x=65,y=71)
+        self.btnIniciar.place(x=65,y=85)
         self.btnParar=Button(self.ventana, fg='blue', width=16, text='Parar', command=self.parar)
-        self.btnParar.place(x=187,y=71)
+        self.btnParar.place(x=187,y=85)
         self.btnAbrir=Button(self.ventana, text="Abrir",width=16,command=self.abrir)
-        self.btnAbrir.place(x=309,y=71)
+        self.btnAbrir.place(x=309,y=85)
 
         self.etDir=Entry(self.ventana,width=77,bg="lavender",textvariable=self.directorio_actual)
         self.etDir.place(x=10,y=0)
